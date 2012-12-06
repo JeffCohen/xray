@@ -1,0 +1,15 @@
+= Xray
+
+In your Gemfile:
+
+gem 'xray', path: '...wherever you cloned to...'
+
+In your routes.br:
+
+mount Xray::Engine => '/xray'
+
+Then run your app.  Go to localhost:3000/xray to inspect your database.
+
+Reloads the browser page automatically.  You might want to turn that off.
+
+This project rocks and uses MIT-LICENSE.

@@ -1,0 +1,32 @@
+<div id="refreshed">
+  Updated: <%= Time.now.strftime("%l:%M:%S %P") %>
+  <span class="refresh">AutoRefresh:
+    <%= link_to "Turn OFF", '#', id: 'auto_refresh_off' %>
+    <%= link_to "Turn ON", '#', id: 'auto_refresh_on', style: 'display: none' %>
+  </span>
+</div>
+
+<% @models.each do |model| %>
+  <h1><%= model.model_name %></h1>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <% model.attribute_names.each do |attr| %>
+            <th><%= attr %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% model.order('id asc').limit(50).each do |row| %>
+          <% values = row.attributes %>
+          <tr>
+            <% model.attribute_names.each do |attr| %>
+              <td><%= display row[attr] %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
