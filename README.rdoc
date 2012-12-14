@@ -1,15 +1,33 @@
-= Xray
+= XRay
 
-In your Gemfile:
+Makes the invisible, visible.
 
-gem 'xray', path: '...wherever you cloned to...'
+Assumes you have a Rails app with at least one model.
 
-In your routes.br:
+== Installation
 
-mount Xray::Engine => '/xray'
+- Clone this repo somewhere on your computer.
+ 
+- In your Gemfile:
+  
+   gem 'xray', path: '...wherever you cloned this to...'
 
-Then run your app.  Go to localhost:3000/xray to inspect your database.
+- Do the bundle install dance.
 
-Reloads the browser page automatically.  You might want to turn that off.
+
+== Usage
+
+- In your routes.rb:
+  
+   mount Xray::Engine => '/xray'
+
+- Start your rails server as usual.  
+
+- Go to localhost:3000/xray to inspect your database!
+
+- Click the table headers to open/close.  
+
+- Reloads the browser page automatically whenever the browser page gains focus!  (You might want to turn that off.)
+
 
 This project rocks and uses MIT-LICENSE.
